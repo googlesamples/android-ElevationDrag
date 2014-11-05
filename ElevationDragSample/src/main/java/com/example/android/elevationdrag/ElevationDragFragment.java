@@ -60,7 +60,7 @@ public class ElevationDragFragment extends Fragment {
         final View floatingShape = rootView.findViewById(R.id.circle);
 
         /* Define the shape of the {@link View}'s shadow by setting one of the {@link Outline}s. */
-        floatingShape.setOutline(mOutlineCircle);
+        floatingShape.getOutlineProvider().getOutline(floatingShape, mOutlineCircle);
 
         /* Clip the {@link View} with its outline. */
         floatingShape.setClipToOutline(true);
@@ -123,15 +123,15 @@ public class ElevationDragFragment extends Fragment {
                 /* Set the corresponding Outline to the shape. */
                 switch (position) {
                     case 0:
-                        floatingShape.setOutline(mOutlineCircle);
+                        floatingShape.getOutlineProvider().getOutline(floatingShape, mOutlineCircle);
                         floatingShape.setClipToOutline(true);
                         break;
                     case 1:
-                        floatingShape.setOutline(mOutlineRect);
+                        floatingShape.getOutlineProvider().getOutline(floatingShape, mOutlineRect);
                         floatingShape.setClipToOutline(true);
                         break;
                     default:
-                        floatingShape.setOutline(mOutlineCircle);
+                        floatingShape.getOutlineProvider().getOutline(floatingShape, mOutlineCircle);
                         /* Don't clip the view to the outline in the last case. */
                         floatingShape.setClipToOutline(false);
                 }
@@ -139,7 +139,7 @@ public class ElevationDragFragment extends Fragment {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                floatingShape.setOutline(mOutlineCircle);
+                floatingShape.getOutlineProvider().getOutline(floatingShape, mOutlineCircle);
             }
         });
 
