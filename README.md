@@ -11,8 +11,8 @@ Outlines.
 Pre-requisites
 --------------
 
-- Android SDK (L Preview)
-- Android Build Tools v20
+- Android SDK (21 - Lollipop)
+- Android Build Tools v21.1
 - Android Support Repository
 
 Getting Started
